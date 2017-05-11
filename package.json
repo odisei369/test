@@ -1,0 +1,21 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "docker-compose up test",
+    "posttest": "docker-compose stop redis mysql",
+    "mocha": "mocha --reporter spec ./test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.0"
+  },
+  "dependencies": {
+    "ioredis": "^2.4.0",
+    "mysql": "^2.11.1"
+  }
+}

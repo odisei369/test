@@ -1,0 +1,18 @@
+version: '2'
+services:
+  test:
+    image: node:latest
+    working_dir: /app
+    volumes:
+      - .:/app
+    command:
+      npm run mocha
+    links:
+      - redis
+      - mysql
+  redis:
+    image: redis
+  mysql:
+    image: mysql
+    environment:
+        MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
